@@ -30,9 +30,10 @@ jobs:
         with:
           node-version: 12
           
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Install yarn  
+        uses: bahmutov/npm-install@v1
         with:
-            cmd: install # will run `yarn install` command
+          install-command: yarn --frozen-lockfile --silent
           
       - name: Build Raect App
         run: yarn run build
